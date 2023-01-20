@@ -1,0 +1,58 @@
+﻿<Window x:Class="LaundryApps.View.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaundryApps.View"
+        mc:Ignorable="d"
+        Icon="/View/Images/hoodie.png"
+        Title="Register" Height="850" Width="1324"  ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity"  From="0" To="1" Duration="0:0:1" FillBehavior="HoldEnd" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="850"/>
+            <ColumnDefinition Width="477"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" CornerRadius="79 0 0 79" Background="#1678F3" Margin="0"/>
+
+        <Grid Grid.Column="0">
+            <Canvas Width="9" Height="812" Background="#1678F3" HorizontalAlignment="Left"/>
+            <Label Content="Get's Started" FontSize="40" HorizontalAlignment="Left"  Margin="161,60,402,692"/>
+            <Label Content="Already Have Account?"  Background="White"  FontSize="25" HorizontalAlignment="Left"  Margin="161,119,0,652"/>
+            <Button x:Name="btnLogin" Click="btnLogin_Click" Content="Login" HorizontalAlignment="Left" Margin="431,121,0,0" VerticalAlignment="Top" BorderBrush="Transparent" Background="#ffff" Foreground="#1678F3" FontSize="25" FontWeight="Medium" />
+            <Label Content="Username" FontSize="18" HorizontalAlignment="Left"  Margin="161,187,0,594"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUsername" Text="Username" GotFocus="txtUsername_GotFocus" HorizontalAlignment="Center" Margin="66,214,0,547" Padding="45,10,0,10" FontSize="18"   TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="48"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="173,226,621,560" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_user.png"/>
+            <Label Content="Name" FontSize="18" HorizontalAlignment="Left"  Margin="161,284,0,497"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtName" Text="Name" GotFocus="txtName_GotFocus" HorizontalAlignment="Center" Margin="66,311,0,450" Padding="45,10,0,10" FontSize="18"  TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="48"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="173,323,0,0" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_name.png"/>
+            <Label Content="Address" FontSize="18" HorizontalAlignment="Left"  Margin="161,381,0,400"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtAddress" Text="Address" GotFocus="txtAddress_GotFocus" HorizontalAlignment="Center" Margin="66,408,0,353" Padding="45,10,0,10" FontSize="18"  TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="48"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="173,420,0,0" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_address.png"/>
+            <Label Content="Date of Birth" FontSize="18" HorizontalAlignment="Left"  Margin="161,478,0,303"/>
+            <DatePicker Style="{DynamicResource DatePickerStyle}" x:Name="datePick" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,506,0,0" Padding="50,10,10,10" FontSize="18" Width="289" Height="48"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="173,517,0,0" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_date.png"/>
+            <Label Content="Phone Number" FontSize="18" HorizontalAlignment="Left"  Margin="468,478,0,303"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtNumber" GotFocus="txtNumber_GotFocus" Text="Phone Number"  HorizontalAlignment="Center" Margin="367,506,0,256" Padding="45,10,0,10" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" Height="48"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="472,517,0,0" VerticalAlignment="Top" Width="25" Source="/View/Images/ic_phone.png"/>
+            <Label Content="Password" FontSize="18" HorizontalAlignment="Left"  Margin="161,572,0,209"/>
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="txtPassword" GotFocus="txtPassword_GotFocus" PasswordChar="*" Password="Input" Visibility="Visible" Width="590"  Height="48" Margin="66,605,0,158" Padding="45,10,407,10"  VerticalContentAlignment="Center"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtUnmaskPass" Text="****" GotFocus="txtUnmaskPass_GotFocus" HorizontalAlignment="Center" Margin="66,605,0,158" Visibility="Hidden" Padding="45,10,407,10" FontSize="18"  TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="48"/>
+            <Image HorizontalAlignment="Left" Height="25" Margin="173,614,0,0" VerticalAlignment="Top" Width="25" Source="Images/ic_lock.png"/>
+            <Button Style="{DynamicResource HideButton}" x:Name="btnShowPass" Click="btnShowPass_Click" BorderBrush="Transparent" Width="20" Height="20" Margin="618,616,10,172">
+                <Button.Background>
+                    <ImageBrush ImageSource="/View/Images/ic_visible.png" />
+                </Button.Background>
+            </Button>
+            <Button Style="{DynamicResource PrimaryButton}" x:Name="btnSign" Content="Sign Up" Click="btnSign_Click" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top" Height="47" Width="210" Margin="256,705,256,0"/>
+        </Grid>
+    </Grid>
+</Window>
